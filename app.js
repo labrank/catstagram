@@ -3,6 +3,7 @@ var app = express();
 const db = require('./DB-cats/db');
 const util = require('./downloadImage');
 
+const port = process.env.PORT || 3000;
 util.batchCats().then(() =>{
   console.log("download finished");
 });
@@ -17,6 +18,6 @@ app.get("/cats", async(req, res, next) =>  {
  res.json(cats);
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
  console.log("Server running on port 3000");
 });
