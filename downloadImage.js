@@ -17,7 +17,7 @@ const rimraf = require('rimraf');
 
 function clearAll(){
   db.borrar();
-  const directory = './catstagram/static/images';
+  const directory = './dist/static/images';
 
 Fs.readdir(directory, (err, files) => {
   if (err) throw err;
@@ -34,7 +34,7 @@ Fs.readdir(directory, (err, files) => {
 
     async function downloadImage (url, id, i) {
       //catstagram/static/images
-      const path = Path.resolve(__dirname, './catstagram/static/images', `${id}.jpg`)
+      const path = Path.resolve(__dirname, './dist/static/images', `${id}.jpg`)
       const writer = Fs.createWriteStream(path)
       console.log(`${i}.- id:${id} ---- url:${url}`);
       db.insertar(id, url, `${id}.jpg`);
