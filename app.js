@@ -6,6 +6,7 @@ var path = require('path');
 var serveStatic = require('serve-static');
 
 const port = process.env.PORT || 3000;
+util.clearAll();
 util.batchCats().then(() =>{
   console.log("download finished");
 });
