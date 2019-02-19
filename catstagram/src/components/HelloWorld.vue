@@ -119,7 +119,7 @@ export default {
         }
     },
     mounted() {
-        axios({ method: "GET", "url": "http://localhost:3000/cats" }).then(result => {
+        axios({ method: "GET", "url": "https://catstagram-juan.herokuapp.com/cats" }).then(result => {
             this.response = result.data;
         }, error => {
             console.error(error);
